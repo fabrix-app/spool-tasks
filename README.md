@@ -7,16 +7,13 @@
 [![Dependency Status][daviddm-image]][daviddm-url]
 [![Follow @FabrixApp on Twitter][twitter-image]][twitter-url]
 
-Engine is a modern backend scaffold for node applications built on the flexibility and speed of Fabrix.
+Task Handler for Fabrix
+ - RabbitMQ
 
 ## Install
 ```sh
 $ npm install @fabrix/spool-tasks --save
 ```
-
-# Documentation
-
-[Engine Documentation](https://fabrix-app.github.io/engine-docs/)
 
 [npm-image]: https://img.shields.io/npm/v/@fabrix/spool-tasks.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/@fabrix/spool-tasks
