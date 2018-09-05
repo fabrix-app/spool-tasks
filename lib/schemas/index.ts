@@ -1,0 +1,1 @@
+export { tasksConfig } from './tasksConfig'
