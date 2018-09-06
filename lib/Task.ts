@@ -1,5 +1,7 @@
+import { FabrixApp } from '@fabrix/fabrix'
+
 export class Task {
-  private app
+  public app: FabrixApp
   public message
   public id
   public isAcknowledged
