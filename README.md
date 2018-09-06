@@ -66,10 +66,10 @@ export const tasks = {
   },
 
   /**
-   * Set worker to subscribe to tasks in the matching profile (tasker.profiles).
+   * Set worker to subscribe to tasks in the matching profile (tasks.profiles).
    * If process.env.WORKER does not match a profile, the application will not subscribe to any tasks
    */
-  worker: process.env.WORKER
+  profile: process.env.WORKER
 }
 ```
 

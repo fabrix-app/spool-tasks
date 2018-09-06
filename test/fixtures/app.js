@@ -89,24 +89,27 @@ const App = {
         ]
       },
       connection: {
-      //   exchange: process.env.TASK_EXCHANGE, // optional, defaults to `tasks-work-x`
-      //   work_queue_name: process.env.TASK_WORK_QUEUE, // optional, defaults to `tasks-work-q`
-      //   interrupt_queue_name: process.env.TASK_INTERRUPT_QUEUE, // optional, defaults to `tasks-interrupt-q`
-      //
-      //   /**
-      //    * The RabbitMQ connection information.
-      //    * See: https://www.rabbitmq.com/uri-spec.html
-      //    */
-      //   // host: process.env.TASK_RMQ_HOST,
-      //   // user: process.env.TASK_RMQ_USER,
-      //   // pass: process.env.TASK_RMQ_PASS,
-      //   // port: process.env.TASK_RMQ_PORT,
-      //   // vhost: process.env.TASK_RMQ_VHOST,
-      //
-      //   /**
-      //    * Connection information could also be passed via uri
-      //    */
-      //   uri: process.env.RMQ_URI || 'amqp://',
+        // optional, defaults to `tasks-work-x`
+        exchange: process.env.TASKS_EXCHANGE,
+        // optional, defaults to `tasks-work-q`
+        work_queue_name: process.env.TASKS_WORK_QUEUE,
+        // optional, defaults to `tasks-interrupt-q`
+        interrupt_queue_name: process.env.TASKS_INTERRUPT_QUEUE,
+
+        /**
+         * The RabbitMQ connection information.
+         * See: https://www.rabbitmq.com/uri-spec.html
+         */
+        host: process.env.TASKS_RMQ_HOST,
+        user: process.env.TASKS_RMQ_USER,
+        pass: process.env.TASKS_RMQ_PASS,
+        port: process.env.TASKS_RMQ_PORT,
+        vhost: process.env.TASKS_RMQ_VHOST,
+
+        /**
+         * Connection information could also be passed via uri
+         */
+        uri: process.env.TASKS_RMQ_URI,
 
         /**
          * Additional, optional connection options (default values shown)

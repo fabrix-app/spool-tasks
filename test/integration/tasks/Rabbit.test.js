@@ -28,6 +28,7 @@ describe('Rabbit', () => {
   })
 
   it('should have tasker on app', () => {
+    console.log('BROKE', global.app.config.get('tasks'))
     assert.ok(global.app.tasker)
     assert.equal(global.app.callCount, 0)
     assert.equal(global.app.finalizeCount, 0)
