@@ -56,6 +56,9 @@ export class TasksSpool extends ExtensionSpool {
     return Promise.all([
       Validator.validateTasksConfig(this.app.config.get('tasks'))
     ])
+      .catch(err => {
+        return Promise.reject(err)
+      })
   }
 
   /**
@@ -68,6 +71,9 @@ export class TasksSpool extends ExtensionSpool {
       Tasks.buildTasker(this.app),
       Tasks.copyDefaults(this.app)
     ])
+      .catch(err => {
+        return Promise.reject(err)
+      })
   }
 
   /**
@@ -77,6 +83,9 @@ export class TasksSpool extends ExtensionSpool {
     return Promise.all([
       Tasks.addTasks(this.app)
     ])
+      .catch(err => {
+        return Promise.reject(err)
+      })
   }
 
   /**
@@ -86,5 +95,8 @@ export class TasksSpool extends ExtensionSpool {
     return Promise.all([
       Tasks.shutdownTasker(this.app)
     ])
+      .catch(err => {
+        return Promise.reject(err)
+      })
   }
 }

@@ -7,31 +7,31 @@ export const tasks = {
   prefix: null,
   live_mode: true,
   auto_save: false,
-  profile: process.env.ENGINE_PROFILE || null,
+  profile: process.env.TASKS_PROFILE || null,
   enabled: true,
   auto_queue: true,
   connection: {
     // optional, defaults to `tasks-work-x`
-    exchange: process.env.ENGINE_TASK_EXCHANGE,
+    exchange: process.env.TASKS_EXCHANGE || null,
     // optional, defaults to `tasks-work-q`
-    work_queue_name: process.env.ENGINE_TASK_WORK_QUEUE,
+    work_queue_name: process.env.TASKS_WORK_QUEUE || null,
     // optional, defaults to `tasks-interrupt-q`
-    interrupt_queue_name: process.env.ENGINE_TASK_INTERRUPT_QUEUE,
+    interrupt_queue_name: process.env.TASKS_INTERRUPT_QUEUE || null,
 
     /**
      * The RabbitMQ connection information.
      * See: https://www.rabbitmq.com/uri-spec.html
      */
-    host: process.env.ENGINE_TASK_RMQ_HOST,
-    user: process.env.ENGINE_TASK_RMQ_USER,
-    pass: process.env.ENGINE_TASK_RMQ_PASS,
-    port: process.env.ENGINE_TASK_RMQ_PORT,
-    vhost: process.env.ENGINE_TASK_RMQ_VHOST,
+    host: process.env.TASKS_RMQ_HOST || null,
+    user: process.env.TASKS_RMQ_USER || null,
+    pass: process.env.TASKS_RMQ_PASS || null,
+    port: process.env.TASKS_RMQ_PORT || null,
+    vhost: process.env.TASKS_RMQ_VHOST || null,
 
     /**
      * Connection information could also be passed via uri
      */
-    uri: process.env.RMQ_URI,
+    uri: process.env.TASKS_RMQ_URI || null,
 
     /**
      * Additional, optional connection options (default values shown)
