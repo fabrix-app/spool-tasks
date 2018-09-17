@@ -1,28 +1,29 @@
 import { FabrixApp } from '@fabrix/fabrix'
+import { FabrixGeneric } from '@fabrix/fabrix/dist/common'
 
-export class Task {
-  public app: FabrixApp
+export class Task extends FabrixGeneric {
   public message
-  public id
   public isAcknowledged
+  private _id
 
-  constructor (app, message) {
-    Object.defineProperty(this, 'app', {
-      enumerable: false,
-      value: app
-    })
+  constructor (app: FabrixApp, message) {
+    super(app)
 
     this.message = message || { body: { taskId: null }}
     this.id = this.message.body.taskId
     this.isAcknowledged = false
   }
 
-  // /**
-  //  * Return the id of this cron
-  //  */
-  // get id () {
-  //   return this.constructor.name.replace(/(\w+)Task/, '$1').toLowerCase()
-  // }
+  /**
+   * Return the id of this task
+   */
+  get id () {
+    return this._id
+  }
+
+  set id (id) {
+    this._id = id
+  }
 
   /**
    * Get's the name of the task class

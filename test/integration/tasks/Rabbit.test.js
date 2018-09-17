@@ -28,7 +28,6 @@ describe('Rabbit', () => {
   })
 
   it('should have tasker on app', () => {
-    console.log('BROKE', global.app.config.get('tasks'))
     assert.ok(global.app.tasker)
     assert.equal(global.app.callCount, 0)
     assert.equal(global.app.finalizeCount, 0)
@@ -39,6 +38,7 @@ describe('Rabbit', () => {
   it('should allow for publishing', done => {
     const testValue = 12378123
     global.app.tasker.publish('TestTask', { testValue })
+    console.log(global.app.tasker.active_tasks)
     setTimeout(() => {
       assert.equal(global.app.callCount, 1)
       assert.equal(global.app.finalizeCount, 1)

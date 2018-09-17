@@ -1,18 +1,14 @@
+import { FabrixApp } from '@fabrix/fabrix'
+import { FabrixGeneric } from '@fabrix/fabrix/dist/common'
 import * as uuid from 'uuid'
 
-export class Client  {
-  public app
+export class Client extends FabrixGeneric {
   public messenger
   public exchange_name
   public active_tasks
 
-  constructor (app, messenger, exchangeName) {
-    Object.defineProperties(this, {
-      app: {
-        enumerable: false,
-        value: app
-      }
-    })
+  constructor (app: FabrixApp, messenger, exchangeName) {
+    super(app)
 
     this.messenger = messenger
     this.exchange_name = exchangeName
@@ -25,6 +21,7 @@ export class Client  {
   async publish (routingKey, data) {
     const taskId = uuid.v1()
     data.taskId = taskId
+
     return this.messenger.publish(this.exchange_name, routingKey, data)
       .then(() => {
         return taskId
