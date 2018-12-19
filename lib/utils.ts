@@ -22,9 +22,9 @@ export const Utils = {
    * @returns {object} - taskerConfig
    */
   configureExchangesAndQueues: (profile, taskerConfig) => {
-    const exchangeName = taskerConfig.exchange || 'tasker-work-x'
-    const workQueueName = taskerConfig.work_queue_name || 'tasker-work-q'
-    const interruptQueueName = taskerConfig.interrupt_queue_name || 'tasker-interrupt-q'
+    const exchangeName = taskerConfig.exchange || 'tasks-work-x'
+    const workQueueName = taskerConfig.work_queue_name || 'tasks-work-q'
+    const interruptQueueName = taskerConfig.interrupt_queue_name || 'tasks-interrupt-q'
 
     taskerConfig.exchangeName = exchangeName
 
